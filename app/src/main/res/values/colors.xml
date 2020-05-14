@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#275d33</color>
+    <color name="colorPrimaryDark">#275d33</color>
+    <color name="colorAccent">#275D33</color>
+
+    <color name="colorTextEntryBottomLine">#FF275d33</color>
+    <color name="colorTextEntryEmpty">#275d33</color>
+    <color name="colorTextEntry">#275d33</color>
+
+    <color name="poweredbyEntry">#275d33</color>
+
+    <color name="assetDetailsButtonBackground">#F3F6F6</color>
+    <color name="assetDetailsButtonTitle">#275D33</color>
+    <color name="auditAssetButtonBackground">#FFF3F6f6</color>
+    <color name="auditAssetButtonTitleButtonTitle">#FF275d33</color>
+    <color name="moveAssetButtonBackground">#F3F6F6</color>
+    <color name="moveAssetButtonTitle">#275d33</color>
+    <color name="reportButtonBackground">#FFF3F6f6</color>
+    <color name="reportButtonTitle">#FF275d33</color>
+
+    <color name="listCellBackgroundColor">#F3F3F3</color>
+
+</resources>

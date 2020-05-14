@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment"
+        app:startDestination="@id/action_mainFragment_to_loginFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment">
+
+        <action
+            android:id="@+id/action_homeFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_auditProjectsFragment"
+            app:destination="@id/auditProjectsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dispatchPickingListsFragment"
+            app:destination="@id/dispatchPickingListsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_materialDetailsScanFragment"
+            app:destination="@id/materialDetailsScanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_materialInwardFragment"
+            app:destination="@id/materialInwardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dispatchSlipsFragment"
+            app:destination="@id/dispatchSlipsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.briot.balmerlawrie.implementor.UserProfileFragment"
+        android:label="user_profile_fragment"
+        tools:layout="@layout/user_profile_fragment" />
+    <fragment
+        android:id="@+id/materialDetailsScanFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.MaterialDetailsScanFragment"
+        android:label="material_details_scan_fragment"
+        tools:layout="@layout/material_details_scan_fragment" />
+    <fragment
+        android:id="@+id/dispatchPickingListsFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.DispatchPickingListsFragment"
+        android:label="dispatch_picking_lists_fragment"
+        tools:layout="@layout/dispatch_picking_lists_fragment" >
+        <action
+            android:id="@+id/action_dispatchPickingListsFragment_to_dispatchPickingListFragment"
+            app:destination="@id/dispatchPickingListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/auditProjectsFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.AuditProjectsFragment"
+        android:label="audit_projects_fragment"
+        tools:layout="@layout/audit_projects_fragment" >
+        <action
+            android:id="@+id/action_auditProjectsFragment_to_auditProjectList"
+            app:destination="@id/auditProjectList" />
+    </fragment>
+    <fragment
+        android:id="@+id/dispatchPickingListFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.DispatchPickingListDetailsFragment"
+        android:label="dispatch_picking_list_fragment"
+        tools:layout="@layout/dispatch_picking_list_fragment" />
+    <fragment
+        android:id="@+id/dispatchSlipsFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.DispatchSlipsFragment"
+        android:label="dispatch_slips_fragment"
+        tools:layout="@layout/dispatch_slips_fragment" >
+        <action
+            android:id="@+id/action_dispatchSlipsFragment_to_dispatchSlipLoadingFragment"
+            app:destination="@id/dispatchSlipLoadingFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/materialInwardFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.MaterialInwardFragment"
+        android:label="material_inward_fragment"
+        tools:layout="@layout/material_inward_fragment" />
+    <fragment
+        android:id="@+id/dispatchSlipLoadingFragment"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.DispatchSlipLoadingFragment"
+        android:label="dispatch_slip_loading_fragment"
+        tools:layout="@layout/dispatch_slip_loading_fragment" />
+    <fragment
+        android:id="@+id/auditProjectList"
+        android:name="com.briot.balmerlawrie.implementor.ui.main.AuditProjectList"
+        android:label="audit_project_list_fragment"
+        tools:layout="@layout/audit_project_list_fragment" />
+</navigation>

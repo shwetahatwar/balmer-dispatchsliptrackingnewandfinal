@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="editTextStyle">@style/LatoCompatEditTextStyle</item>
+        <item name="buttonStyle">@style/LatoBoldButtonStyle</item>
+        <item name="android:textViewStyle">@style/LatoRegularTextviewStyle</item>
+    </style>
+
+    <style name="LatoEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textColor">@color/colorTextEntry</item>
+        <item name="android:textColorHint">@color/colorTextEntryEmpty</item>
+    </style>
+
+    <style name="LatoBoldButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="LatoRegularTextviewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <!-- declare the theme name that's actually applied in the manifest file -->
+    <style name="AppTheme" parent="BaseAppTheme" />
+    <style name="LatoCompatEditTextStyle" parent="LatoEditTextStyle" />
+
+    <style name="spinner_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+</resources>

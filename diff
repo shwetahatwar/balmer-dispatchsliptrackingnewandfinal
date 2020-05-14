@@ -1,0 +1,198 @@
+commit 668cf1c8a0558ffd8c34518d1f1a85f713b1a64b
+Author: shweta hatwar <shweta.hatwar6@gmail.com>
+Date:   Tue Apr 28 19:52:21 2020 +0530
+
+    Deviation shown in yellow color
+
+diff --git a/app/build.gradle b/app/build.gradle
+deleted file mode 100755
+index ddc538c..0000000
+--- a/app/build.gradle
++++ /dev/null
+@@ -1,100 +0,0 @@
+-apply plugin: 'com.android.application'
+-
+-apply plugin: 'kotlin-android'
+-
+-apply plugin: 'kotlin-android-extensions'
+-
+-apply plugin: 'kotlin-kapt'
+-
+-android {
+-    compileSdkVersion 28
+-    defaultConfig {
+-        applicationId "com.briot.balmerlawrie.implementor"
+-        minSdkVersion 21
+-        targetSdkVersion 28
+-        versionCode 2
+-        versionName "1.0.1"
+-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+-        vectorDrawables.useSupportLibrary = true
+-        multiDexEnabled true
+-    }
+-    buildTypes {
+-        release {
+-            minifyEnabled false
+-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+-            buildConfigField "String", "HOSTNAME", "\"https://briot-balmer-lawrie.herokuapp.com/\""
+-            //buildConfigField "String", "HOSTNAME", "\"http://10.26.6.20:3000/\""
+-           // buildConfigField "String", "HOSTNAME", "\"http://192.168.0.14:3000/\""
+-
+-        }
+-
+-        debug {
+-//            buildConfigField "String", "HOSTNAME", "\"http://10.0.2.2:3000\""
+-            buildConfigField "String", "HOSTNAME", "\"https://briot-balmer-lawrie.herokuapp.com/\""
+-            //buildConfigField "String", "HOSTNAME", "\"http://10.26.6.20:3000/\""
+-            //buildConfigField "String", "HOSTNAME", "\"http://192.168.0.14:3000/\""
+-
+-        }
+-        lintOptions {
+-//            checkReleaseBuilds false
+-            // Or, if you prefer, you can continue to check for errors in release builds,
+-            // but continue the build even when errors are found:
+-            abortOnError false
+-        }
+-    }
+-    compileOptions {
+-        sourceCompatibility 1.8
+-        targetCompatibility 1.8
+-    }
+-    packagingOptions {
+-        exclude 'META-INF/atomicfu.kotlin_module'
+-    }
+-}
+-
+-dependencies {
+-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+-    implementation 'androidx.appcompat:appcompat:1.1.0'
+-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+-    implementation 'com.github.GrenderG:Toasty:1.4.2'
+-    testImplementation 'junit:junit:4.13'
+-    androidTestImplementation 'androidx.test:runner:1.2.0'
+-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+-
+-    // RxJava 2 & Retrofit
+-    implementation "io.reactivex.rxjava2:rxjava:2.2.16"
+-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+-    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+-    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.1'
+-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+-
+-    implementation 'androidx.navigation:navigation-fragment:2.2.1'
+-    implementation 'androidx.navigation:navigation-ui:2.2.1'
+-
+-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+-    implementation 'com.github.Pierry:Progress:v1.1'
+-    implementation 'com.pascalwelsch.arrayadapter:arrayadapter:1.3.0'
+-
+-    implementation 'androidx.multidex:multidex:2.0.1'
+-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+-
+-    def room_version = "$rootProject.roomVersion"
+-
+-    implementation "androidx.room:room-runtime:$room_version"
+-    kapt "androidx.room:room-compiler:$room_version"
+-
+-    // optional - Kotlin Extensions and Coroutines support for Room
+-    implementation "androidx.room:room-ktx:$room_version"
+-
+-    // optional - RxJava support for Room
+-    implementation "androidx.room:room-rxjava2:$room_version"
+-
+-    // optional - Guava support for Room, including Optional and ListenableFuture
+-    implementation "androidx.room:room-guava:$room_version"
+-
+-    // Test helpers
+-    testImplementation "androidx.room:room-testing:$room_version"}
+diff --git a/app/src/main/java/com/briot/balmerlawrie/implementor/repository/local/PrefRepository.kt b/app/src/main/java/com/briot/balmerlawrie/implementor/repository/local/PrefRepository.kt
+index 484915f..9c4742e 100755
+--- a/app/src/main/java/com/briot/balmerlawrie/implementor/repository/local/PrefRepository.kt
++++ b/app/src/main/java/com/briot/balmerlawrie/implementor/repository/local/PrefRepository.kt
+@@ -55,5 +55,6 @@ class PrefConstants {
+     val lightGreenColor = Color.parseColor("#FF9CF780")
+     val lightOrangeColor = Color.parseColor("#73FF8800")
+     val lightGrayColor = Color.parseColor("#FFF3F3F3")
++    val lightYellowColor = Color.parseColor("#FFFF99")
+     val messageBackgroundColor = Color.parseColor("#FFD50000")
+ }
+\ No newline at end of file
+diff --git a/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/DispatchSlipLoadingFragment.kt b/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/DispatchSlipLoadingFragment.kt
+index f6567bc..acbd0d0 100644
+--- a/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/DispatchSlipLoadingFragment.kt
++++ b/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/DispatchSlipLoadingFragment.kt
+@@ -298,6 +298,9 @@ class DispatchSlipLoadingFragment : Fragment(), LoginDialogListener {
+         dialogFragment.productCode = productCode
+         dialogFragment.batchCode = batchCode
+         dialogFragment.serialNumber = serialNumber
++        viewModel.serialNumber = serialNumber
++        viewModel.batchCode = batchCode
++        viewModel.productCode = productCode
+         val ft = this.activity!!.supportFragmentManager.beginTransaction()
+         val prev = this.activity!!.supportFragmentManager.findFragmentByTag("dialog")
+         if (prev != null)
+@@ -429,7 +432,6 @@ open class SimpleDispatchSlipLoadingItemAdapter(private val recyclerView: androi
+ 
+         fun bind() {
+             val dispatchSlipItem = dispatchSlipItems.value!![adapterPosition]!!
+-
+             dispatchSlipItemBatchNumber.text = dispatchSlipItem.batchNumber
+             dispatchSlipItemMaterialCode.text = dispatchSlipItem.materialCode
+             dispatchSlipItemMaterialDetails.text = dispatchSlipItem.materialGenericName;
+@@ -441,6 +443,9 @@ open class SimpleDispatchSlipLoadingItemAdapter(private val recyclerView: androi
+             } else if (dispatchSlipItem.scannedPacks.toInt() >= dispatchSlipItem.numberOfPacks.toInt()) {
+                 linearLayout.setBackgroundColor(PrefConstants().lightGreenColor)
+             }
++            if (dispatchSlipItem.materialCode == viewModel.productCode && dispatchSlipItem.batchNumber == viewModel.batchCode){
++                linearLayout.setBackgroundColor(PrefConstants().lightYellowColor)
++            }
+         }
+     }
+ }
+diff --git a/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/MaterialDetailsScanFragment.kt b/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/MaterialDetailsScanFragment.kt
+index 7fc4ff1..3c3765e 100644
+--- a/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/MaterialDetailsScanFragment.kt
++++ b/app/src/main/java/com/briot/balmerlawrie/implementor/ui/main/MaterialDetailsScanFragment.kt
+@@ -71,12 +71,12 @@ class MaterialDetailsScanFragment : Fragment() {
+                     keyboard.hideSoftInputFromWindow(activity?.currentFocus?.getWindowToken(), 0)
+                 }
+ 
+-                if (it.dispatchslip == null)  {
++                if (it.dispatchSlip == null)  {
+                     UiHelper.hideProgress(this.progress)
+                     this.progress = null
+                     (materialItemsList.adapter as MaterialItemsAdapter).notifyDataSetChanged()
+                 }  else  {
+-                    viewModel.getMaterialDispatchSlip(it.dispatchslip!!.dispatchSlipNumber)
++                    viewModel.getMaterialDispatchSlip(it.dispatchSlip!!.dispatchSlipNumber)
+                 }
+             }
+ 
+@@ -100,7 +100,7 @@ class MaterialDetailsScanFragment : Fragment() {
+ 
+         viewModel.dispatchSlip.observe(this, Observer<DispatchSlip> {
+             if (it != null) {
+-                (this.materialItemsList.adapter as MaterialItemsAdapter).getItem(0)?.dispatchslip = it
++                (this.materialItemsList.adapter as MaterialItemsAdapter).getItem(0)?.dispatchSlip = it
+             }
+ 
+             (materialItemsList.adapter as MaterialItemsAdapter).notifyDataSetChanged()
+@@ -240,11 +240,11 @@ class MaterialItemsAdapter(val context: Context) : ArrayAdapter<MaterialInward,
+ 
+ //        holder.materialInwardDate.text = item.
+ 
+-        if (item.dispatchslip != null) {
++        if (item.dispatchSlip != null) {
+ //            holder.materialPicker.text = item.dispatchSlip!!.toString()
+ //            holder.materialLoader.text = item.dispatchSlipId!!.toString()
+ 
+-            holder.materialDispatchSlipNumber.text = item.dispatchslip!!.dispatchSlipNumber
++            holder.materialDispatchSlipNumber.text = item.dispatchSlip!!.dispatchSlipNumber
+ 
+ //            if  (item.dispatchSlip!!.truckId != null) {
+ //                holder.materialDispatchTruckNumber.text = item.dispatchSlip!!.ttat!!.truckNumber

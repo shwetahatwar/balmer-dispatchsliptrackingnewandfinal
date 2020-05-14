@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Material Dispatch</string>
+    <string name="submit">Submit</string>
+    <string name="Scan">Scan</string>
+    <string name="todo">TODO</string>
+    <string name="view_material_details">Material Details</string>
+    <string name="material_barcode">Material Barcode</string>
+    <string name="scanTextView">TextView</string>
+    <string name="locationTextView">Asset(s) at Location</string>
+    <string name="button">Scan</string>
+    <string name="scan_location">Scan Location</string>s
+    <string name="submit_audit">Submit Audit</string>
+    <string name="scane_location">Scan Location</string>
+    <string name="scane_asset_barcode">Scan asset barcode</string>
+    <string-array name="machine_state_array">
+        <item>select</item>
+        <item>Available</item>
+        <!--<item>Occupied</item>-->
+        <item>Scheduled Maintenance</item>
+        <item>Under Maintenance</item>
+        <item>Break-down</item>
+    </string-array>
+
+    <string-array name="stopPart_state_array">
+        <item>select</item>
+        <item>Completed</item>
+        <item>Pending</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="job_card_details">Material Details</string>
+    <string name="machine_wise_job_card_details">Material Inward</string>
+    <string name="start_part_process">Material Picking</string>
+    <string name="stop_part_process">Material Loading</string>
+    <string name="pending_items_dashboard">Physical Stock Verification</string>
+    <string name="machine_maintenance">Machine Maintenance</string>
+    <string name="receive_at_store">Receive at Store</string>
+    <string name="drop_at_location">Drop At Location</string>
+    <string name="material_inward_button">Material Details</string>
+    <string name="no_internet_connection_message">Not able to connect to the server.</string>
+    <string name="oops_something_went_wrong">Oops something went wrong.</string>
+    <string name="try_again_later">Try again later.</string>
+</resources>

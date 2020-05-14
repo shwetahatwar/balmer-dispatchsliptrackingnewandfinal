@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BaseAppTheme">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="LatoCompatEditTextStyle" parent="LatoEditTextStyle">
+        <item name="android:backgroundTint">@color/colorTextEntryBottomLine</item>
+    </style>
+
+</resources>

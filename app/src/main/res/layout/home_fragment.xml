@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="true"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/materialDetails"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/auditAssetButtonBackground"
+                android:drawableLeft="@mipmap/ic_material_details"
+                android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/job_card_details"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/assetDetailsButtonTitle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/materialInward"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/auditAssetButtonBackground"
+                android:drawableLeft="@mipmap/ic_inward"
+                android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/machine_wise_job_card_details"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/assetDetailsButtonTitle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/materialPicking"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/auditAssetButtonBackground"
+                android:drawableLeft="@mipmap/ic_picking"
+                android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/start_part_process"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/auditAssetButtonTitleButtonTitle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/materialLoading"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/moveAssetButtonBackground"
+                android:drawableLeft="@mipmap/ic_loading"
+                android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/stop_part_process"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/moveAssetButtonTitle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/auditProject"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="3dp"
+                android:background="@color/reportButtonBackground"
+                android:drawableLeft="@mipmap/ic_audit"
+                android:drawableRight="@drawable/ic_navigate_next_black_24dp"
+                android:drawablePadding="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/pending_items_dashboard"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="@color/reportButtonTitle"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/versiontext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="app version 1.0.1"
+                android:textAlignment="center"
+                android:textColor="@color/assetDetailsButtonTitle" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
